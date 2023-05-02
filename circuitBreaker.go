@@ -52,3 +52,10 @@ func (cb *CircuitBreaker) MonitorService(serviceURL string) {
 	time.Sleep(cb.retryTime)
 }
 
+/*
+In this example, StateOpen represents the circuit breaker being tripped, StateHalfOpen represents 
+the circuit breaker allowing a single call to the service, and StateClosed represents the circuit 
+breaker being closed and allowing normal calls to the service. The failureThreshold is the number 
+of failures allowed before the circuit breaker is tripped, and the successThreshold is the number 
+of successful calls required for the circuit breaker to move from StateHalfOpen to StateClosed.
+*/
